@@ -13,6 +13,9 @@ class Calculator:
     def multiply(self):
         return self.num1 * self.num2
     
+    def square(self):
+        return self.num1 ** 2
+
     def divide(self):
         if self.num2 != 0:
             return self.num1 / self.num2
@@ -20,26 +23,27 @@ class Calculator:
             return "Cannot divide by zero"
     
 while True:
-    print("\n-------------------------------------- Calculator Menu --------------------------------------")
+    print("\n---- Calculator Menu ----")
     print("1. Addition")
     print("2. Subtraction")
-    print("3. Multipllication")
+    print("3. Multiplication")
     print("4. Division")
-    print("5. Exit")
+    print("5. Square")
+    print("6. Exit")
 
     choice = input("Enter your choice: ")
 
-    if choice == "5":
+    if choice == "6":
         print("Exiting...")
         break
 
     try:
-        a = int(input("Enter First Number: "))
-        b = int(input("Enter Second Number: ")) 
+        a = float(input("Enter First Number: "))
+        b = float(input("Enter Second Number: ")) 
     except ValueError:
-        print("Invalid Input Please enter correct input")
+        print("Invalid input Please enter only number")
         continue
-    print("hello")
+
     calc = Calculator(a,b)
 
      
@@ -54,11 +58,12 @@ while True:
 
     elif choice == "4":
         print(f"Division = {calc.divide()}")
+    
+    elif choice == "5":
+        print(f"Square =  {calc.square()}")
 
     else:
         print("Invalid Choice..")
-
-
 
 
 
