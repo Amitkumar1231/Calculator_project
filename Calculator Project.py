@@ -39,7 +39,7 @@ while True:
     except ValueError:
         print("Invalid Input Please enter correct input")
         continue
-
+    print("hello")
     calc = Calculator(a,b)
 
      
